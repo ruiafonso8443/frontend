@@ -6,6 +6,8 @@ import useTranslation from "./i18n/use-translation";
 import { useStoreSelector, useStoreDispatch } from "./store";
 import { selectedPage, goToLoginPage } from "./store/navigation-reducer";
 
+import LoginPage from "./pages/login-page";
+
 function App() {
   const { t } = useTranslation();
   const page = useStoreSelector(selectedPage);
@@ -19,21 +21,7 @@ function App() {
 
   if (page === Page.Login) {
     // Login Screen
-    return (
-      <div className="App">
-        <header className="App-header">
-          <p>Hello There this is the Login page😂😂😂</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return <LoginPage />;
   }
 
   if (page === Page.FeedBack) {
