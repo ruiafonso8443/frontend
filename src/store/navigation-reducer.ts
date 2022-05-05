@@ -22,11 +22,21 @@ const navigationSlice = createSlice({
     goToLoginPage: (state) => {
       state.page = Page.Login;
     },
+    goToHomePage: (state) => {
+      state.page = Page.HomePage;
+    },
+    goToFeedBackPage: (state) => {
+      state.page = Page.FeedBack;
+    },
+    goSettingsPage: (state) => {
+      state.page = Page.Settings;
+    },
   },
 });
 
 // ************ ACTIONS ************
-export const { goToLoginPage } = navigationSlice.actions;
+export const { goToLoginPage, goToHomePage, goToFeedBackPage, goSettingsPage } =
+  navigationSlice.actions;
 
 // ************ SELECTORS ************
 export const selectedPage = (state: StoreState): Page => state.navigation.page;
