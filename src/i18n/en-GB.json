@@ -2,5 +2,10 @@
   "about_us": "About US",
   "homepage": "Homepage",
   "feedback": "Feedback",
-  "settings": "Settings"
+  "settings": "Settings",
+  "where_to_go": "Where to go?",
+  "origin": "Origin",
+  "destination": "Destination",
+  "building": "Building",
+  "my_location": "My Location"
 }

@@ -3,7 +3,7 @@ import { Page } from "./types/pages";
 
 import { useStoreSelector } from "./store";
 import { selectedPage } from "./store/navigation-reducer";
-import CustomButton from "./components/buttons";
+import Home from "./app/pages/home";
 
 function App() {
   const page = useStoreSelector(selectedPage);
@@ -22,16 +22,7 @@ function App() {
     return <>Setting</>;
   }
 
-  return (
-    <CustomButton
-      backgroundColor="isepBrick.300"
-      borderColor="isepGreen.500"
-      buttonColor="isepGrey.600"
-      hoverColor="isepBrick.400"
-      text="Hello There"
-      handleButtonClick={() => [alert("You Clicked with Button😂😂😂😂😂😂")]}
-    />
-  );
+  return <Home />;
 }
 
 export default App;
