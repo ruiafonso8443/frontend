@@ -14,6 +14,7 @@ import {
   goSettingsPage,
   goToLoginPage,
   goToAdminFeedbackPage,
+  goToBeaconsPage,
 } from "../../store/navigation-reducer";
 import Page from "../../types/pages";
 
@@ -40,8 +41,8 @@ function Navigation() {
     if (id === "homepage") dispatch(goToHomePage());
     if (id === "feedback") dispatch(goToFeedBackPage());
     if (id === "settings") dispatch(goSettingsPage());
+    if (id === "adminBeacons") dispatch(goToBeaconsPage());
     if (id === "adminFeedback"){
-      console.log(id);
       dispatch(goToAdminFeedbackPage());
     }
   };
@@ -95,6 +96,18 @@ function Navigation() {
               }}
             >
               {t("admin_feedback")}
+            </span>
+          )}
+
+          {user === "Admin" && (
+            <span
+              id="adminBeacons"
+              onClick={handleNavigationClick}
+              style={{
+                fontWeight: page === 3 ? "700" : "400",
+              }}
+            >
+              {t("admin_beacons")}
             </span>
           )}
         </div>
