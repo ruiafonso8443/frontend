@@ -13,6 +13,7 @@ import {
   goToFeedBackPage,
   goSettingsPage,
   goToLoginPage,
+  goToAdminFeedbackPage,
 } from "../../store/navigation-reducer";
 import Page from "../../types/pages";
 
@@ -21,6 +22,7 @@ import { MouseEvent } from "react";
 function Navigation() {
   const { t } = useTranslation();
   const [langCod, setLangCode] = useState<"PT" | "EN">("PT");
+  const [user, setUser] = useState<"Admin" | "User">("Admin");
 
   const page = useStoreSelector(selectedPage);
   const dispatch = useStoreDispatch();
@@ -35,10 +37,13 @@ function Navigation() {
 
   const handleNavigationClick = (e: MouseEvent<HTMLElement>) => {
     const { id } = e.currentTarget;
-
     if (id === "homepage") dispatch(goToHomePage());
     if (id === "feedback") dispatch(goToFeedBackPage());
     if (id === "settings") dispatch(goSettingsPage());
+    if (id === "adminFeedback"){
+      console.log(id);
+      dispatch(goToAdminFeedbackPage());
+    }
   };
 
   const handleLogoutClick = () => {
@@ -80,6 +85,18 @@ function Navigation() {
           >
             {t("settings")}
           </span>
+
+          {user === "Admin" && (
+            <span
+              id="adminFeedback"
+              onClick={handleNavigationClick}
+              style={{
+                fontWeight: page === 3 ? "700" : "400",
+              }}
+            >
+              {t("admin_feedback")}
+            </span>
+          )}
         </div>
       )}
 
