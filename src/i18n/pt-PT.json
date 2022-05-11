@@ -9,5 +9,13 @@
   "beacon_device_id": "Id do Dispositivo",
   "beacon_classroom": "Sala de aula",
   "beacon_coordinates": "Coordenadas",
-  "beacon_list":"Lista de Beacons"
+  "beacon_list":"Lista de Beacons",
+  "beacon_add":"Adicionar Beacon",
+  "beacon_update":"Atualizar Beacon",
+  "beacon_add_button":"ADICIONAR BEACON",
+  "beacon_update_button":"ATUALIZAR",
+  "beacon_update_success_message": "Beacon atualizado com sucesso!",
+  "beacon_add_success_message": "Beacon adicionado com sucesso!",
+  "beacon_update_error_message": "Beacon não pode ser atualizado 😓",
+  "beacon_add_error_message": "Beacon não pode ser adicionado 😓"
 }
