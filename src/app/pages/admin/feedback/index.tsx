@@ -15,18 +15,21 @@ import {
   Grid,
   GridItem,
   Divider,
+  Icon,
 } from "@chakra-ui/react";
 import ReactAudioPlayer from "react-audio-player";
 import { BrowserView, MobileView } from "react-device-detect";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-interface Feedback { 
+interface Feedback {
   date: string;
   feedback: string;
   name: string;
   type: string;
 }
 
-const array1: Feedback[] = [ //endpoint Feedback/GET ALL
+const array1: Feedback[] = [
+  //endpoint Feedback/GET ALL
   {
     date: "qui. 31/03 19:32",
     feedback: "Não tenho nada a dizer a aplicação é incrivel",
@@ -61,7 +64,6 @@ export class AdminFeedback extends React.Component<{}, {}> {
     type: "",
   };
 
-
   private setFeedBackAndName(
     event: string,
     eventName: string,
@@ -78,7 +80,11 @@ export class AdminFeedback extends React.Component<{}, {}> {
     } else if (type === "audio") {
       return <ReactAudioPlayer src={feedback} autoPlay controls />;
     } else {
-      return <Text fontSize="md">{feedback}</Text>;
+      return (
+        <Text fontSize="md" fontFamily={"Montserrat-Medium"}>
+          {feedback}
+        </Text>
+      );
     }
   }
 
@@ -126,17 +132,23 @@ export class AdminFeedback extends React.Component<{}, {}> {
                     w="100%"
                     p={4}
                     color="isepGrey.500"
+                    fontFamily={"Montserrat-Medium"}
                   >
                     {this.getIcon(type)}
-                    <Box flex="1" textAlign="left" textColor="#000000">
+                    <Box
+                      flex="1"
+                      textAlign="left"
+                      textColor="#000000"
+                      fontFamily={"Montserrat-Medium"}
+                    >
                       {date}
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4}>
+                <AccordionPanel pb={4} fontFamily={"Montserrat-Medium"}>
                   {this.getFeedback(feedback, type)}
-                  <Text fontSize="xs" as="i">
+                  <Text fontSize="xs" as="i" fontFamily={"Montserrat-Medium"}>
                     {name}
                   </Text>
                 </AccordionPanel>
@@ -159,12 +171,21 @@ export class AdminFeedback extends React.Component<{}, {}> {
                       _focus={{
                         boxShadow: "none",
                       }}
+                      fontFamily={"Montserrat-Medium"}
                       onClick={() =>
                         this.setFeedBackAndName(feedback, name, type)
                       }
                     >
                       <Box margin={"2"}>{this.getIcon(type)}</Box>
-                      <Text>{date}</Text>
+                      <Text fontFamily={"Montserrat-Medium"}>{date}</Text>
+                      {/* <Box w={"15"}></Box>
+                        <Icon
+                          as={MdOutlineKeyboardArrowRight}
+                          width={8}
+                          height={8}
+                          color="isepGrey.600"
+                          alignContent={"right"}
+                        ></Icon> */}
                     </Button>
                   </ButtonGroup>
                 </Center>
@@ -185,8 +206,13 @@ export class AdminFeedback extends React.Component<{}, {}> {
                   <Box height={"110px"}></Box>
                   <Box>
                     {this.getFeedback(this.state.feedback, this.state.type)}
-                    <Box height={'100px'}></Box>
-                    <Text fontSize="xs" as="i" align={"left"}>
+                    <Box height={"100px"}></Box>
+                    <Text
+                      fontSize="xs"
+                      as="i"
+                      align={"left"}
+                      fontFamily={"Montserrat-Medium"}
+                    >
                       {this.state.name}
                     </Text>
                   </Box>

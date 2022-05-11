@@ -130,7 +130,12 @@ function AdminBeacons() {
     setZ(parseInt(z));
   }
 
-  function getBeaconUpdateForm(): void {
+  function getBeaconUpdateForm(deviceId: string, classRoom: string, x: number, y: number, z:number): void {
+    setDeviceId(deviceId);
+    setClassRoom(classRoom);
+    setX(x);
+    setY(y);
+    setZ(z);
     setState("updateform");
     setButton(t("beacon_update_button"));
     setTitle(t("beacon_update"));
@@ -243,7 +248,7 @@ function AdminBeacons() {
                       {array1.map(({ deviceId, classRoom, x, y, z }) => (
                         <Tr
                           _hover={{ bg: "isepBrick.300" }}
-                          onClick={() => getBeaconUpdateForm()}
+                          onClick={() => getBeaconUpdateForm(deviceId, classRoom, x, y, z)}
                         >
                           <Td>{deviceId}</Td>
                           <Td>{classRoom}</Td>

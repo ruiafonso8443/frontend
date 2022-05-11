@@ -40,7 +40,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Box height={'110px'}></Box>
-          <Text fontSize='3xl' margin='7'>{t("feedback_admin_page")}</Text>
+          <Text fontSize='3xl' margin='7' fontFamily={"Montserrat-Medium"}>{t("feedback_admin_page")}</Text>
           <AdminFeedback></AdminFeedback>
         </header>
        </div>
